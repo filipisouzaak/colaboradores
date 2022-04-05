@@ -2,6 +2,8 @@ package com.github.souzaak.colaboradores.resource;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,7 +39,7 @@ public class EmpregadorResource {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Empregador criar(@RequestBody Empregador empregador) {
+	public Empregador criar(@Valid @RequestBody Empregador empregador) {
 		return empregadorService.criar(empregador);
 	}
 	

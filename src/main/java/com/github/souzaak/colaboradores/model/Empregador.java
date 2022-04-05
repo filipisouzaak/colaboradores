@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -22,9 +24,13 @@ public class Empregador {
 	private Integer id;
 	
 	@Column(name = "nome")
+	@NotNull
+	@Size(max = 150)
 	private String nome;
 	
 	@Column(name = "identificador")
+	@NotNull
+	@Size(max = 18)
 	private String identificador;
 	
 	@OneToMany
